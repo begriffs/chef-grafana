@@ -52,16 +52,3 @@ default['grafana']['unsaved_changes_warning'] = 'true'
 default['grafana']['playlist_timespan'] = '1m'
 default['grafana']['window_title_prefix'] = 'Grafana - '
 default['grafana']['search_max_results'] = 20
-default['grafana']['datasources'] = {
-  'graphite' => {
-    'type' => "'graphite'",
-    'url'  => 'window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/_graphite"',
-    'default' => true
-  },
-  'elasticsearch' => {
-    'type' => "'elasticsearch'",
-    'url'  => 'window.location.protocol+"//"+window.location.hostname+":"+window.location.port',
-    'index' => lambda { "'#{node['grafana']['grafana_index']}'" },
-    'grafanaDB' => true
-  }
-}
